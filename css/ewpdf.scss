@@ -1,0 +1,137 @@
+// Use Bootstrap 4 variables
+@import "bootstrap/functions"; //***
+@import "variables"; //***
+
+// Report
+$ThemeRptGrpColor1: inherit;
+$ThemeRptGrpTextColor1: inherit;
+$ThemeRptGrpSummaryColor1: #F0F8FF;
+$ThemeRptGrpSummaryTextColor1: #2647A0;
+$ThemeRptGrpColor2: inherit;
+$ThemeRptGrpTextColor2: inherit;
+$ThemeRptGrpSummaryColor2: inherit;
+$ThemeRptGrpSummaryTextColor2: inherit;
+$ThemeRptGrpColor3: inherit;
+$ThemeRptGrpTextColor3: inherit;
+$ThemeRptGrpSummaryColor3: #F0F8FF;
+$ThemeRptGrpSummaryTextColor3: #2647A0;
+$ThemeRptGrpColor4: inherit;
+$ThemeRptGrpTextColor4: inherit;
+$ThemeRptGrpSummaryColor4: inherit;
+$ThemeRptGrpSummaryTextColor4: inherit;
+$ThemeRptGrpColor5: inherit;
+$ThemeRptGrpTextColor5: inherit;
+$ThemeRptGrpSummaryColor5: #F0F8FF;
+$ThemeRptGrpSummaryTextColor5: #2647A0;
+$ThemeRptGrpColor6: inherit;
+$ThemeRptGrpTextColor6: inherit;
+$ThemeRptGrpSummaryColor6: inherit;
+$ThemeRptGrpSummaryTextColor6: inherit;
+$ThemeRptPageSummaryColor: #99CCFF;
+$ThemeRptPageSummaryTextColor: inherit;
+$ThemeRptGrandSummaryColor: inherit;
+$ThemeRptGrandSummaryTextColor: inherit;
+body {
+	background-color: inherit; // background color
+	font-family: DejaVuSerif; // font name
+	font-size: xx-small; // font size - DO NOT CHANGE!
+}
+
+// table for PDF export
+.ew-table {
+	border: 0;
+	border-collapse: collapse;
+	font-size: xx-small; // font size - DO NOT CHANGE!
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+}
+.ew-table td, .ew-table th {
+	padding: 3px; // cell padding
+	border: 0.5px solid;
+	border-color: #BFD3EE; // border color
+}
+.ew-table .ew-table-header td, .ew-table .ew-table-header th {
+	background-image: none; // remove header bg image
+	background-color: #2647A0; // header bgcolor
+	color: #FFFFFF; // header font color
+	vertical-align: top;
+}
+
+// row color
+.ew-table .ew-table-row, .ew-table .ew-table-row td {
+	background-color: #FFFFFF; // alt row color 1
+}
+
+// alternate row color
+.ew-table .ew-table-alt-row, .ew-table .ew-table-alt-row td {
+	background-color: #EDF5FF; // alt row color 2
+}
+
+// main table footer
+.ew-table .ew-table-footer td {
+	background-color: #D4E7FD; // footer color
+}
+
+// crosstab column row
+.ew-table .ew-table-column-row {
+	background-color: #EDF5FF; // alt row color 2
+}
+
+// groups
+@mixin ew-rpt-grp($i, $color, $bgcolor, $summary-color, $summary-bgcolor) {
+
+	// group #{$i}
+	.ew-rpt-grp-header-#{$i} {
+		color: $color;
+		background-color: $bgcolor;
+		font-weight: bold;
+	}
+	.ew-rpt-grp-header-#{$i} {
+		a:link, a:active, a:visited {
+			color: inherit;
+			text-decoration: none;
+		}
+	}
+	.ew-rpt-grp-field-#{$i} {
+		background-color: $bgcolor;
+	}
+	.ew-rpt-grp-summary-#{$i} {
+		color: $summary-color;
+		background-color: $summary-bgcolor;
+	}
+}
+@include ew-rpt-grp(1, $ThemeRptGrpTextColor1, $ThemeRptGrpColor1, $ThemeRptGrpSummaryTextColor1, $ThemeRptGrpSummaryColor1);
+@include ew-rpt-grp(2, $ThemeRptGrpTextColor2, $ThemeRptGrpColor2, $ThemeRptGrpSummaryTextColor2, $ThemeRptGrpSummaryColor2);
+@include ew-rpt-grp(3, $ThemeRptGrpTextColor3, $ThemeRptGrpColor3, $ThemeRptGrpSummaryTextColor3, $ThemeRptGrpSummaryColor3);
+@include ew-rpt-grp(4, $ThemeRptGrpTextColor4, $ThemeRptGrpColor4, $ThemeRptGrpSummaryTextColor4, $ThemeRptGrpSummaryColor4);
+@include ew-rpt-grp(5, $ThemeRptGrpTextColor5, $ThemeRptGrpColor5, $ThemeRptGrpSummaryTextColor5, $ThemeRptGrpSummaryColor5);
+@include ew-rpt-grp(6, $ThemeRptGrpTextColor6, $ThemeRptGrpColor6, $ThemeRptGrpSummaryTextColor6, $ThemeRptGrpSummaryColor6);
+.ew-rpt-grp-aggregate {
+	font-weight: bold;
+}
+.ew-rpt-page-summary {
+	color: inherit; // page summary text color
+	background-color: #99CCFF; // page total background color
+}
+.ew-rpt-grand-summary {
+	color: inherit; // grand summary text color
+	background-color: inherit; // grand summary background color
+}
+
+// for crosstab report only
+.ew-rpt-col-summary {
+	background-color: #2647A0; // column summary
+	color: #FFFFFF;
+	border: 0;
+}
+.ew-rpt-col-header {
+	background-color: #2647A0; // column heading background color
+	color: #FFFFFF; // column heading text color
+	border: 0;
+}
+
+// export page break
+.ew-page-break {
+	page-break-before: always;
+}

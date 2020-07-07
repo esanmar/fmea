@@ -1,0 +1,1 @@
+loadjs.ready("head",function(){jQuery});
