@@ -2,3 +2,4 @@ Failure mode and effects analysis is the process of reviewing as many components
 
 http://aerometalls.com/fmea/
 
+![KPI](https://github.com/esanmar/fmea/blob/master/fmea.png)
